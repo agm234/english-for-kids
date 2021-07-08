@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.hard{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 40px;
+    color:#00BF82;;
+}
+.visible{
+    opacity: 0;
+}
+@media (max-width: 750px){
+    .hard{
+        font-size: 50px;
+        line-height: 35px;
+    }
+}  
+@media (max-width: 750px){
+    .hard{
+        font-size: 22px;
+        line-height: 35px;
+    }
+}
+
+
+
