@@ -1,0 +1,18 @@
+.card_category{
+    width: 300px;
+    height: 270px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin:20px;
+    transform-style: preserve-3d;
+    transform-origin: right;
+    transition: all 0.8s;
+    &.fliped{
+        transform: rotateY(180deg) translatex(-100%);
+        transform-origin: left;
+    }
+}
+.card_category:hover{
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}

@@ -1,0 +1,13 @@
+input:checked + .slider {
+    background: linear-gradient(180deg,#fd6a63,#feb46b 40%);
+  }
+  
+  input:focus + .slider {
+    background: linear-gradient(180deg,#fd6a63,#feb46b 40%);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(78px);
+    -ms-transform: translateX(78px);
+    transform: translateX(78px);
+  }

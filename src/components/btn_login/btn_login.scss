@@ -1,0 +1,31 @@
+.btn_login{
+    width: 248px;
+    height: 60px;
+    border-radius: 5px;
+    background: #00BF82;
+    border-color: #ffffff;
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    padding-left: 30px;
+}
+@media (max-height: 550px){
+    .btn_login{
+        width: 200px;
+        height: 50px;
+    }
+   
+}
+@media (max-height: 450px){
+    .btn_login{
+        height: 40px;
+        
+    }
+    
+}

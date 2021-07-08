@@ -1,0 +1,18 @@
+.span_train{
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    top: 5px;
+    right: 20px;
+}
+.span_train_text{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 12px;
+    color: #ffffff;
+}
