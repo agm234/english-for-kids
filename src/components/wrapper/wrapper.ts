@@ -95,7 +95,7 @@ export class Wrapper extends BaseComponent {
 
   cheked(child: HTMLElement): void {
     if ((this.WrapperHeader.LabelSwitch.SwitchInput.element as HTMLInputElement).checked) {
-      this.WrapperHeader.LabelSwitch.SwitchInput.element.classList.add('cheackedde');
+      this.WrapperHeader.LabelSwitch.SwitchInput.element.setAttribute('cheacked', 'cheacked');
       if (child.classList.contains('card_category')) {
         this.BtnStart.element.classList.remove('btn_none');
         this.chekedEl();
@@ -104,7 +104,7 @@ export class Wrapper extends BaseComponent {
       }
     } else {
       this.GameStarted = false;
-      this.WrapperHeader.LabelSwitch.SwitchInput.element.classList.remove('cheackedde');
+      this.WrapperHeader.LabelSwitch.SwitchInput.element.removeAttribute('cheacked');
       if (child.classList.contains('card_category')) {
         this.BtnStart.element.classList.add('btn_none');
         this.nocheked();

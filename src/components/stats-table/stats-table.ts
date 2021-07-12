@@ -24,11 +24,15 @@ export class StatsTable extends BaseComponent {
       const el = e.target as HTMLTableCellElement;
       if (el.nodeName === 'TH') {
         const index = el.cellIndex;
+        document.querySelector('.desc')?.classList.remove('desc');
+        document.querySelector('.asc')?.classList.remove('asc');
         const sortedarray = sortBycategory(this.StatsTableBody.mass, index);
         if (el.classList.contains('sorted')) {
           sortedarray?.reverse();
+          el.classList.add('asc');
           el.classList.remove('sorted');
         } else {
+          el.classList.add('desc');
           el.classList.add('sorted');
         }
         this.StatsTableBody.element.innerHTML = '';

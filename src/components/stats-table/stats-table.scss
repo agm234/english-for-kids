@@ -14,6 +14,21 @@ background: linear-gradient(40deg,#ffd86f,#fc6262);
 thead{
     cursor: pointer;
 }
+th{
+    position: relative;
+}
+th.desc::before, th.desc::before {
+    content: "↑";
+    position: absolute;
+    top: 15px;
+    right: 4%;
+}
+th.asc::after, th.asc::after {
+    content: "↓";
+    position: absolute;
+    top: 15px;
+    right: 4%;
+}
 
 @media (max-width: 690px){
     .stats_table{

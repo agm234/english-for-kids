@@ -188,7 +188,7 @@ export class App {
     this.Wrapper.removerepeat();
     this.Wrapper.CurrentSoundindex = [];
     this.Wrapper.answers = 0;
-    if (this.Wrapper.WrapperHeader.LabelSwitch.SwitchInput.element.classList.contains('cheackedde')) {
+    if (this.Wrapper.WrapperHeader.LabelSwitch.SwitchInput.element.hasAttribute('cheacked')) {
       this.Wrapper.BtnStart.element.classList.remove('btn_none');
     } else {
       this.Wrapper.BtnStart.element.classList.add('btn_none');

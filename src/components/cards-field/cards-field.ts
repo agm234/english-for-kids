@@ -48,7 +48,7 @@ export class CardsField extends BaseComponent {
   }
 
   AddCard(card: Array<CardsMain>): void {
-    if ((document.querySelector('input') as HTMLInputElement).classList.contains('cheackedde')) {
+    if ((document.querySelector('input') as HTMLInputElement).hasAttribute('cheacked')) {
       this.check = 'red';
     } else {
       this.check = 'green';
@@ -71,7 +71,7 @@ export class CardsField extends BaseComponent {
     card.forEach((e) => {
       this.sounds.push(e.audioSrc);
     });
-    if ((document.querySelector('input') as HTMLInputElement).classList.contains('cheackedde')) {
+    if ((document.querySelector('input') as HTMLInputElement).hasAttribute('cheacked')) {
       this.mode = 'game';
       this.none = 'none';
       this.none1 = 'display1';
