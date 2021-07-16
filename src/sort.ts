@@ -5,7 +5,7 @@ interface Word {
   clicks: number;
   correct: number;
   wrong: number;
-  errors: number;
+  errorspers: number;
 }
 export function sortBycategory(arr: Word[], index: number): Word[] {
   let arr1: Word[] = [];
@@ -35,10 +35,11 @@ export function sortBycategory(arr: Word[], index: number): Word[] {
       break;
     }
     case 6: {
-      arr1 = arr.sort((a, b) => (a.errors > b.errors ? 1 : -1));
+      arr1 = arr.sort((a, b) => (a.errorspers > b.errorspers ? 1 : -1));
       break;
     }
-    default: return arr1;
+    default:
+      return arr1;
   }
   return arr1;
 }

@@ -2,6 +2,7 @@ import { BaseComponent } from '../base-component';
 import { CardMain } from '../card-main/card-main';
 import { CardCat } from '../card-category/card-category';
 import { WrapperHeader } from '../wrapper_header/wrapper_header';
+import { getCategories, getCards } from '../../Api';
 import './cards-field.scss';
 
 interface CardsMain {
@@ -40,11 +41,11 @@ export class CardsField extends BaseComponent {
     this.none1 = '';
   }
 
-  async start(): Promise<void> {
-    const res = await fetch('./images.json');
-    const cards: CardsMain[] = await res.json();
-    const card = cards.map((name) => name);
-    this.AddCard(card);
+  start(): void {
+    const arr = getCategories();
+    arr.then((data) => {
+      this.AddCard(data);
+    });
   }
 
   AddCard(card: Array<CardsMain>): void {
@@ -59,11 +60,11 @@ export class CardsField extends BaseComponent {
   }
 
   async startCat(cat: string): Promise<void> {
-    const res1 = await fetch('./cards.json');
-    const cards1 = await res1.json();
-    const index = cards1[0].indexOf(cat);
-    const cards2: Array<CardsCat> = cards1[index + 1];
-    this.AddCardCat(cards2);
+    const arr = getCards();
+    arr.then((data) => {
+      const cards = data.filter((el) => el.category.indexOf(cat) !== -1);
+      this.AddCardCat(cards);
+    });
   }
 
   AddCardCat(card: Array<CardsCat>): void {

@@ -9,7 +9,7 @@ export interface Word {
   clicks: number;
   correct: number;
   wrong: number;
-  errors: number;
+  errorspers: number;
 }
 
 export class StatsTableRow extends BaseComponent {

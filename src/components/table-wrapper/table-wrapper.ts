@@ -3,8 +3,8 @@ import { StatsTable } from '../stats-table/stats-table';
 import { StatsTableBody } from '../stats-table-body/stats-table-body';
 import { StatsTableHeader } from '../stats-table-header/stats-table-header';
 import { TableBtns } from '../table-btns/table-btns';
-import { difficult } from '../../wordsDiffic';
-import { words } from '../../local';
+// import { difficult } from '../../wordsDiffic';
+// import { words } from '../../local';
 
 import './table-wrapper.scss';
 
@@ -25,7 +25,7 @@ export class TableWrapper extends BaseComponent {
 
   Reset(): void {
     this.TableBtns.Btnrest.element.addEventListener('click', async () => {
-      await words();
+      // await words();
       this.resettable();
     });
   }
@@ -40,7 +40,7 @@ export class TableWrapper extends BaseComponent {
 
   dufficultwords(): void {
     this.TableBtns.Btndifficult.element.addEventListener('click', () => {
-      difficult();
+      // difficult();
       window.location.hash = '#Hardwords';
     });
   }

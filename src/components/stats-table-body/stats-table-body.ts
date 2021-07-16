@@ -1,5 +1,6 @@
 import { BaseComponent } from '../base-component';
 import { StatsTableRow } from '../stats-table-row/stats-table-row';
+import { getCards } from '../../Api';
 import './stats-table-body.scss';
 
 interface Word {
@@ -9,7 +10,7 @@ interface Word {
   clicks: number;
   correct: number;
   wrong: number;
-  errors: number;
+  errorspers: number;
 }
 
 export class StatsTableBody extends BaseComponent {
@@ -21,11 +22,13 @@ export class StatsTableBody extends BaseComponent {
   }
 
   rows(element: HTMLElement): void {
-    for (let i = 0; i < localStorage.length; i += 1) {
-      const word: Word = JSON.parse(localStorage.getItem(localStorage.key(i) as string) as string);
-      const row = new StatsTableRow(word).element;
-      this.mass.push(word);
-      element.appendChild(row);
-    }
+    const arr = getCards();
+    arr.then((data) => {
+      for (let i = 0; i < data.length; i += 1) {
+        const row = new StatsTableRow(data[i]).element;
+        this.mass.push(data[i]);
+        element.appendChild(row);
+      }
+    });
   }
 }

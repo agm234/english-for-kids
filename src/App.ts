@@ -1,5 +1,6 @@
 import './styles.scss';
 import { Wrapper } from './components/wrapper/wrapper';
+import { Admin } from './components/admin-panel/admin-panel';
 import { TableWrapper } from './components/table-wrapper/table-wrapper';
 
 export class App {
@@ -148,7 +149,6 @@ export class App {
             document.querySelector('.stats_table')?.classList.add('table_red');
           }
         },
-
       },
       {
         name: 'Hardwords',
@@ -159,8 +159,28 @@ export class App {
           this.nav();
           this.Wrapper.CardsField.element.innerHTML = '';
           this.Wrapper.CardsField.element.setAttribute('page', 'Hardwords');
-          this.Wrapper.hardword();
+          // this.Wrapper.hardword();
           this.CurrentCardPage();
+        },
+      },
+      {
+        name: 'adminpanel',
+        component: () => {
+          if (localStorage.length === 0) {
+            this.rootElement.innerHTML = '';
+            this.rootElement.appendChild(this.Wrapper.element);
+            window.location.hash = 'main';
+          } else {
+            this.rootElement.innerHTML = '';
+            this.rootElement.appendChild(new Admin().element);
+          }
+        },
+      },
+      {
+        name: 'client',
+        component: () => {
+          this.rootElement.innerHTML = '';
+          this.rootElement.appendChild(new Wrapper().element);
         },
       },
     ];

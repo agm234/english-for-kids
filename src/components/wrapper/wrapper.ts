@@ -6,16 +6,20 @@ import { Footer } from '../footer/footer';
 import { BtnStart } from '../btn_start/btn_start';
 import { Stars } from '../stars/stars';
 import { Star } from '../star/star';
-import { Word } from '../stats-table-row/stats-table-row';
+// import { Word } from '../stats-table-row/stats-table-row';
 import { MainWrapper } from '../main-wrapper/main-wrapper';
 import { errors } from '../stats-table-row/persent_erors';
-import { difficult } from '../../wordsDiffic';
+import { PopupWrapper } from '../popup_wrapper/popup_wrapper';
+// import { difficult } from '../../wordsDiffic';
+import { getCardByName, updateCard } from '../../Api';
 import './wrapper.scss';
 
 export class Wrapper extends BaseComponent {
   public readonly NavMeny: NavMeny;
 
   public readonly Footer: Footer;
+
+  public readonly PopupWrapper: PopupWrapper;
 
   public readonly WrapperHeader: WrapperHeader;
 
@@ -49,12 +53,15 @@ export class Wrapper extends BaseComponent {
     this.element.appendChild(this.Footer.element);
     this.MainWrapper = new MainWrapper();
     this.element.appendChild(this.MainWrapper.element);
+    this.PopupWrapper = new PopupWrapper();
+    this.element.appendChild(this.PopupWrapper.element);
     this.CurrentSoundindex = [];
     this.answers = 0;
     this.GameStarted = false;
     this.showNav();
     this.checkboxMain();
     this.StartGame();
+    this.ShowLoginForm();
   }
 
   showNav(): void {
@@ -84,7 +91,7 @@ export class Wrapper extends BaseComponent {
         this.answers = 0;
         this.CardsField.element.innerHTML = '';
         if (loc === 'Hardwords') {
-          this.hardword();
+          // this.hardword();
         } else {
           this.CardsField.startCat(loc);
         }
@@ -210,10 +217,12 @@ export class Wrapper extends BaseComponent {
   rightanswer(e: HTMLElement): void {
     e.classList.add('rightanswer');
     (e.parentElement?.firstChild as HTMLElement).classList.remove('inactivenone');
-    const obj: Word = JSON.parse(localStorage.getItem(e.getAttribute('audio')?.slice(6, -4) as string) as string);
-    obj.correct += 1;
-    obj.errors = errors(obj.correct, obj.wrong);
-    localStorage.setItem(e.getAttribute('audio')?.slice(6, -4) as string, JSON.stringify(obj));
+    const card = getCardByName(e.getAttribute('word') as string);
+    card.then((data) => {
+      data[0].correct += 1;
+      data[0].errorspers = errors(data[0].correct, data[0].wrong);
+      updateCard(data[0]);
+    });
     this.Stars.element.appendChild(new Star('rightanswer').element);
     const audiosucses = new Audio('audio/correct.mp3');
     audiosucses.play();
@@ -236,10 +245,12 @@ export class Wrapper extends BaseComponent {
 
   wronganswer(e: HTMLElement): void {
     this.answers += 1;
-    const obj: Word = JSON.parse(localStorage.getItem(e.getAttribute('audio')?.slice(6, -4) as string) as string);
-    obj.wrong += 1;
-    obj.errors = errors(obj.correct, obj.wrong);
-    localStorage.setItem(e.getAttribute('audio')?.slice(6, -4) as string, JSON.stringify(obj));
+    const card = getCardByName(e.getAttribute('word') as string);
+    card.then((data) => {
+      data[0].wrong += 1;
+      data[0].errorspers = errors(data[0].correct, data[0].wrong);
+      updateCard(data[0]);
+    });
     this.Stars.element.appendChild(new Star('wronganswer').element);
     const audioerror = new Audio('audio/error.mp3');
     audioerror.play();
@@ -304,21 +315,26 @@ export class Wrapper extends BaseComponent {
     this.CurrentSoundindex = [];
   }
 
-  hardword(): void {
-    if (difficult().length > 0) {
-      this.CardsField.AddCardCat(difficult());
-    } else {
-      this.Footer.element.classList.add('visible');
-      this.WrapperHeader.element.classList.add('visible');
-      if (!this.BtnStart.element.classList.contains('btn_none')) {
-        this.BtnStart.element.classList.add('btn_none');
-      }
-      this.CardsField.element.innerHTML = '<p class="hard">There are no difficult words</p>';
-      setTimeout(() => {
-        this.Footer.element.classList.remove('visible');
-        this.WrapperHeader.element.classList.remove('visible');
-        window.location.hash = '#main';
-      }, 2000);
-    }
+  // hardword(): void {
+  //   if (difficult().length > 0) {
+  //     this.CardsField.AddCardCat(difficult());
+  //   } else {
+  //     this.Footer.element.classList.add('visible');
+  //     this.WrapperHeader.element.classList.add('visible');
+  //     if (!this.BtnStart.element.classList.contains('btn_none')) {
+  //       this.BtnStart.element.classList.add('btn_none');
+  //     }
+  //     this.CardsField.element.innerHTML = '<p class="hard">There are no difficult words</p>';
+  //     setTimeout(() => {
+  //       this.Footer.element.classList.remove('visible');
+  //       this.WrapperHeader.element.classList.remove('visible');
+  //       window.location.hash = '#main';
+  //     }, 2000);
+  //   }
+  // }
+  ShowLoginForm(): void {
+    this.NavMeny.BtnLogin.element.addEventListener('click', () => {
+      this.PopupWrapper.element.classList.toggle('popup_none');
+    });
   }
 }

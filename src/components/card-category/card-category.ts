@@ -29,7 +29,7 @@ export class CardCat extends BaseComponent {
     super('div', ['card_category']);
     this.Inactive = new Inactive();
     this.element.appendChild(this.Inactive.element);
-    this.CardCategoryWrapper = new CardCategoryWrapper(none1, audio);
+    this.CardCategoryWrapper = new CardCategoryWrapper(none1, audio, name);
     this.element.appendChild(this.CardCategoryWrapper.element);
     this.CardFront = new CardFront(image, name, audio, mode, none);
     this.element.appendChild(this.CardFront.element);

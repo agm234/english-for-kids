@@ -1,8 +1,7 @@
 import { BaseComponent } from '../base-component';
 import { CardFrontTop } from './card-front-top/card-front-top';
 import { CardFrontBottom } from './card-front-bottom/card-front-bottom';
-import { Word } from '../stats-table-row/stats-table-row';
-
+import { getCardByName, updateCard } from '../../Api';
 import './card-front.scss';
 
 export class CardFront extends BaseComponent {
@@ -25,9 +24,11 @@ export class CardFront extends BaseComponent {
 
   media(): void {
     this.element.addEventListener('click', () => {
-      const obj: Word = JSON.parse(localStorage.getItem(this.element.getAttribute('word') as string) as string);
-      obj.clicks += 1;
-      localStorage.setItem(this.element.getAttribute('word') as string, JSON.stringify(obj));
+      const card = getCardByName(this.element.getAttribute('word') as string);
+      card.then((data) => {
+        data[0].clicks += 1;
+        updateCard(data[0]);
+      });
       this.audio.play();
     });
   }
