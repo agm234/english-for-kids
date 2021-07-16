@@ -1,0 +1,24 @@
+.admin_main{
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    position: relative;
+}
+
+@media (max-width: 1200px){
+    .admin_main{
+        max-width: 800px;
+    }
+ 
+}
+@media (max-width: 800px){
+    .admin_main{
+        max-width: 400px;
+    }
+ 
+}

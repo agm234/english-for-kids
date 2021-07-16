@@ -1,0 +1,41 @@
+.create_word{
+    width: 360px;
+    height: 458px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin:20px;
+    border-radius: 5%;
+}
+.create_word_header{
+    width: 100%;
+    height: 64px;
+    margin-top: 43px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.create_word_header_text{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #000000;
+}
+.create_word_main{
+    width: 100%;
+    height: 349px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.create_word_main_img{
+    width: 150px;
+    height: 150px;
+}

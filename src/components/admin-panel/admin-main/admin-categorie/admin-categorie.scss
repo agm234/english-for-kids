@@ -1,0 +1,89 @@
+.admin_categorie{
+    width: 360px;
+    height: 240px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin:20px;
+    border-radius: 5%;
+ 
+}
+.categorie_name{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    color: #000000;
+}
+.admin_categorie_card_top{
+    width: 100%;
+    height: 35px;
+    margin-top: 24px;
+}
+.categorie_close{
+    position: absolute;
+    top: 9px;
+    right: 9px;
+}
+.admin_categorie_card_bottom{
+    width: 100%;
+    height: 59px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+.admin_categorie_card_addword,
+.admin_categorie_card_update{
+    width: 143px;
+    height: 34px;
+
+}
+
+.admin_btn{
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: inherit;
+    border-color:#00BF82;
+    color: #00BF82;
+}
+.admin_categorie_card_main{
+    width: 80%;
+    height: 97px;
+    padding-top: 30px;
+    padding-left: 54px;
+}
+.admin_categorie_card_main_text{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    
+    color: #000000;
+}
+.admin_categorie_card_main_number{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}

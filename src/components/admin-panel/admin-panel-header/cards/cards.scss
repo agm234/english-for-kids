@@ -1,0 +1,22 @@
+.word_header{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    
+    
+    color: #FFFFFF;
+}
+.admin_cards{
+    height: 100px;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width:700px){
+    .admin_cards{
+        width: 30%;   
+    }
+}
