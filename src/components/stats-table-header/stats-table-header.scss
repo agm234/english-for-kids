@@ -1,0 +1,24 @@
+.stats_table_header{
+    width: 100%;
+    height: 60px;
+    white-space: nowrap;
+}
+th{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+    color: #000000;
+}
+@media (max-width: 1000px){
+    th{
+        font-size: 14px;
+    }
+ 
+}
+@media (max-width: 690px){
+    th{
+        font-size: 8px;
+    }
+}

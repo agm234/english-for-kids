@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Action (set A)",
+        "image": "img/dance.jpg",
+        "page": "1"
+    },
+    {
+        "name": "Action (set B)",
+        "image": "img/play.jpg",
+        "page": "2"
+    },
+    {
+        "name": "Cities",
+        "image": "img/kyoto.jpg",
+        "page": "3"
+    },
+    {
+        "name": "Transport",
+        "image": "img/motorcycle.jpg",
+        "page": "4"
+    },
+    {
+        "name": "Animal (set A)",
+        "image": "img/cat.jpg",
+        "page": "5"
+    },
+    {
+        "name": "Animal (set B)",
+        "image": "img/bird.jpg",
+        "page": "6"
+    },
+    {
+        "name": "Clothes",
+        "image": "img/pants.jpg",
+        "page": "7"
+    },
+    {
+        "name": "Emotion",
+        "image": "img/happy.jpg",
+        "page": "8"
+    }
+]

@@ -1,0 +1,29 @@
+.wrapper_header{
+    width: 100%;
+    max-width: 1320px;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+@media (max-width: 1370px){
+    .wrapper_header{
+        max-width: 1000px;
+    }
+ 
+}
+@media (max-width: 1000px){
+    .wrapper_header{
+        max-width: 640px;
+    }
+ 
+}
+@media (max-width: 690px){
+    .wrapper_header{
+        max-width: 300px;
+    }
+ 
+}
+

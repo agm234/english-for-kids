@@ -1,0 +1,21 @@
+.span_play{
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    top: 5px;
+    left: 10px;
+}
+.span_train_text_play{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 12px;
+    color: #ffffff;
+}
+.span_none{
+    display: none;
+}

@@ -1,0 +1,13 @@
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 43px;
+    cursor: pointer;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {display: none;}
+  
+ 

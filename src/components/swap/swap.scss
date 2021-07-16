@@ -1,0 +1,16 @@
+.swap{
+    width: 26px;
+    height: 26px;
+    background-image: url(../../../public/images/swap.svg);
+    background-size: cover;
+    position: absolute;
+    bottom: 13px;
+    right: 14px;
+}
+.swap:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+.swapped{
+    display: none;
+}
