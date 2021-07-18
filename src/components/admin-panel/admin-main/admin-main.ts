@@ -1,20 +1,21 @@
 import { BaseComponent } from '../../base-component';
-import { getCategories, getCards, Cards } from '../../../Api';
+import { getCategories, getCards, Cards, createCategorie, getCategoryByName, updateCategory, updateCard } from '../../../Api';
 import { CardCategorie } from './admin-categorie/admin-categorie';
 import { CreateCardCategorie } from './create-categorie/create-categorie';
 import { CardWord } from './admin-word/admin-word';
 import { CreateCardWord } from './create-word/create-word';
+
 import './admin-main.scss';
 
 interface Category {
   name: string;
-  image: string;
-  page: string;
+  image?: string;
+  page?: string;
 }
 export class AdminMain extends BaseComponent {
-  private readonly CreateCardCategorie: CreateCardCategorie;
+  public CreateCardCategorie: CreateCardCategorie;
 
-  private readonly CreateCardWord: CreateCardWord;
+  public CreateCardWord: CreateCardWord;
 
   constructor() {
     super('div', ['admin_main']);
@@ -23,25 +24,32 @@ export class AdminMain extends BaseComponent {
     this.CreateCardWord = new CreateCardWord();
   }
 
-  startCategories(): void {
+  async startCategories(): Promise<void> {
+    console.log(12312)
     const arr = getCategories();
-    arr.then((data) => {
+    arr.then(async (data) => {
+      console.log(data)
       this.addCategories(data);
     });
   }
 
   async addCategories(card: Array<Category>): Promise<void> {
+    this.element.innerHTML = '';
     this.element.appendChild(this.CreateCardCategorie.element);
     card.forEach((e) => {
-      const arr = getCards();
-      arr.then(async (data) => {
-        const wordcards = data.filter((el) => el.category === e.name);
-        this.element.insertBefore(
-          new CardCategorie(e.name, wordcards.length).element,
-          this.CreateCardCategorie.element,
-        );
-      });
+
+      // const arr = getCards();
+      // arr.then((data) => {
+      //   const wordcards = data.filter((el) => el.category === e.name);
+      this.element.insertBefore(
+        new CardCategorie(e.name, /*wordcards.length*/ 8).element,
+        this.CreateCardCategorie.element,
+      );
     });
+    // });
+    // this.CreateCardCategorie.createcat();
+
+
   }
 
   StartWords(name: string): void {
@@ -62,4 +70,5 @@ export class AdminMain extends BaseComponent {
       );
     });
   }
+
 }

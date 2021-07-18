@@ -1,0 +1,17 @@
+.admin_main_wrap{
+    max-width: 1200px;
+    width: 100%;
+}
+
+@media (max-width: 1200px){
+    .admin_main_wrap{
+        max-width: 800px;
+    }
+ 
+}
+@media (max-width: 800px){
+    .admin_main_wrap{
+        max-width: 400px;
+    }
+ 
+}

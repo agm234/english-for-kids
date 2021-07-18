@@ -25,7 +25,8 @@
     background: rgba(255, 255, 255, 0.9);
     padding-bottom: 10%;
 }
-input{
+.name,
+.password{
     width: 70%;
     height: 16%;
     background:rgba(255, 255, 255, 0.9);
@@ -43,6 +44,7 @@ input{
     color: #000000
 }
 .popupbtn{
+    cursor: pointer;
     width: 30%;
     height: 60%;
     border: 2px solid #FFFFFF;

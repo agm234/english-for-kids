@@ -26,6 +26,7 @@
     margin-top: 24px;
 }
 .categorie_close{
+    cursor: pointer;
     position: absolute;
     top: 9px;
     right: 9px;
@@ -46,7 +47,7 @@
 }
 
 .admin_btn{
-
+    cursor: pointer;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: normal;

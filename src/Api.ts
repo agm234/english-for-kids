@@ -1,7 +1,7 @@
 export interface Category {
   name: string;
-  image: string;
-  page: string;
+  image?: string;
+  page?: string;
 }
 export interface Cards {
   _id: string;
@@ -32,6 +32,33 @@ export const getCategories = async (): Promise<Category[]> => {
 };
 export const deleteCategory = async (word: string): Promise<void> => {
   await fetch(url(`${CATEGORIES}/${word}`), { method: 'DELETE' });
+};
+export const createCategorie = async (body: Category): Promise<void> => {
+  const response = await fetch(url(CATEGORIES), {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+};
+export const updateCategory = async (body: Category): Promise<Category> => {
+  const response = await fetch(url(CATEGORIES), {
+    method: 'PUT',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+  const data = await response.json();
+  return data;
+};
+export const getCategoryByName = async (name: string): Promise<Category[]> => {
+  const response = await fetch(url(`${CATEGORIES}/${name}`));
+  const data = await response.json();
+  return data;
 };
 export const getCards = async (): Promise<Cards[]> => {
   const response = await fetch(url(CARDS));
@@ -68,6 +95,7 @@ export const updateCard = async (body: Cards): Promise<Cards> => {
   const data = await response.json();
   return data;
 };
+
 export const login = async (body: User): Promise<{ token: string }> => {
   const response = await fetch(url(`${ADMIN}`), {
     method: 'POST',

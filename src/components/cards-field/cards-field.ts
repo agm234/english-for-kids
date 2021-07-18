@@ -7,8 +7,8 @@ import './cards-field.scss';
 
 interface CardsMain {
   name: string;
-  image: string;
-  page: string;
+  image?: string;
+  page?: string;
 }
 interface CardsCat {
   word: string;
@@ -55,7 +55,7 @@ export class CardsField extends BaseComponent {
       this.check = 'green';
     }
     card.forEach((e) => {
-      this.element.appendChild(new CardMain(e.name, e.page, e.image, this.check).element);
+      this.element.appendChild(new CardMain(e.name, e.page as string, e.image as string, this.check).element);
     });
   }
 
