@@ -1,5 +1,9 @@
 import { BaseComponent } from '../../base-component';
-import { getCategories, getCards, Cards, createCategorie, getCategoryByName, updateCategory, updateCard } from '../../../Api';
+import {
+  getCategories,
+  getCards,
+  Cards,
+} from '../../../Api';
 import { CardCategorie } from './admin-categorie/admin-categorie';
 import { CreateCardCategorie } from './create-categorie/create-categorie';
 import { CardWord } from './admin-word/admin-word';
@@ -25,10 +29,8 @@ export class AdminMain extends BaseComponent {
   }
 
   async startCategories(): Promise<void> {
-    console.log(12312)
     const arr = getCategories();
     arr.then(async (data) => {
-      console.log(data)
       this.addCategories(data);
     });
   }
@@ -36,23 +38,20 @@ export class AdminMain extends BaseComponent {
   async addCategories(card: Array<Category>): Promise<void> {
     this.element.innerHTML = '';
     this.element.appendChild(this.CreateCardCategorie.element);
-    card.forEach((e) => {
-
-      // const arr = getCards();
-      // arr.then((data) => {
-      //   const wordcards = data.filter((el) => el.category === e.name);
-      this.element.insertBefore(
-        new CardCategorie(e.name, /*wordcards.length*/ 8).element,
-        this.CreateCardCategorie.element,
-      );
+    card.forEach(async (e) => {
+      const arr = getCards();
+      await arr.then((data) => {
+        const wordcards = data.filter((el) => el.category === e.name);
+        this.element.insertBefore(
+          new CardCategorie(e.name, wordcards.length).element,
+          this.CreateCardCategorie.element,
+        );
+      });
     });
-    // });
-    // this.CreateCardCategorie.createcat();
-
-
   }
 
   StartWords(name: string): void {
+    this.CreateCardWord.element.setAttribute('category', `${name}`);
     const arr = getCards();
     arr.then((data) => {
       const wordcards = data.filter((el) => el.category.indexOf(name) !== -1);
@@ -65,10 +64,9 @@ export class AdminMain extends BaseComponent {
     this.element.appendChild(this.CreateCardWord.element);
     wordcards.forEach((e) => {
       this.element.insertBefore(
-        new CardWord(e.word, e.translation, e.audioSrc, e.image, e.category).element,
+        new CardWord(e.word, e.translation, e.image, e.category, e.soundname).element,
         this.CreateCardWord.element,
       );
     });
   }
-
 }

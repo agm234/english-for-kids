@@ -4,11 +4,12 @@ import './admin-categorie.scss';
 export class CardCategorie extends BaseComponent {
   constructor(name: string, words: number) {
     super('div', ['admin_categorie']);
-    this.element.setAttribute('name', `${name}`)
+    this.element.setAttribute('name', `${name}`);
     this.element.innerHTML = `
         <div class="admin_categorie_card_top">
         <h2 class="categorie_name">${name}</h2>
-        <img class="categorie_close" src="../../images/cansel.png" data-deletecat='${name}' alt="close">
+        <img class="categorie_close" src="https://res.cloudinary.com/dnddbsls8/image/upload/v1626271926/english-for-kids/images/cansel_g6qape.png"
+         data-deletecat='${name}' alt="close">
         </div>
         <div class="admin_categorie_card_main">
         <p class="admin_categorie_card_main_text">Words:<span class="admin_categorie_card_main_number">${words}</span></p>
@@ -18,7 +19,5 @@ export class CardCategorie extends BaseComponent {
         <button class="admin_btn admin_categorie_card_addword" data-catname="${name}">Add word</button>
         </div>
         `;
-
   }
-
 }

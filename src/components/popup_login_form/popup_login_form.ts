@@ -29,6 +29,14 @@ export class PopupForm extends BaseComponent {
         if (data.token !== undefined) {
           localStorage.setItem('token', `${data.token}`);
           window.location.hash = 'adminpanel';
+        } else {
+          window.location.hash = 'main';
+          const nav = document.querySelector('.nav_menu') as HTMLElement;
+          if (nav.classList.contains('nav_active')) {
+            nav.classList.remove('nav_active');
+          }
+          (this.element as HTMLFormElement).reset();
+          document.querySelector('.popup_wrapper')?.classList.add('popup_none');
         }
       });
     });

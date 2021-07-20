@@ -55,7 +55,15 @@ export class CardsField extends BaseComponent {
       this.check = 'green';
     }
     card.forEach((e) => {
-      this.element.appendChild(new CardMain(e.name, e.page as string, e.image as string, this.check).element);
+      this.element.appendChild(
+        new CardMain(
+          e.name,
+          e.page as string,
+          e.image
+            || 'https://res.cloudinary.com/dnddbsls8/image/upload/v1626784238/english-for-kids/images/15ef8d1ccbb4514e0a758c61e1623b2f_gj2ggv.jpg',
+          this.check,
+        ).element,
+      );
     });
   }
 

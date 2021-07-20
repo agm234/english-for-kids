@@ -1,0 +1,91 @@
+.create_word_form{
+    width: 360px;
+    height: 458px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin:20px;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+.word_create_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.word_inputs_create{
+    width: 293px;
+    height: 318px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.textinput{
+    width: 100%;
+    height: 35px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 1px;
+    border-color:  #3F51B5;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.word_btns_create{
+    width: 293px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.admin_categorie_word_cansel{
+    width: 130px;
+    color: #E53935;
+    border-color: #E53935;
+    background-color: inherit;
+}
+.admin_categorie_word_create{
+    width: 130px;
+    color: #00BF82;
+    border-color: #00BF82;
+    background-color: inherit;
+}
+.fileinput{
+    width: 293px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    
+    color: #000000;
+}
+input[type='file'] {
+    color: transparent;
+    border-color: #00BF82;
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+.createimg,
+.createsound{
+    width: 143px;
+    height: 34px;
+    
+}

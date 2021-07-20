@@ -21,7 +21,7 @@
         "max-len": [
             "warn",
             {
-                "code": 130
+                "code": 150
             }
         ],
         "indent": [

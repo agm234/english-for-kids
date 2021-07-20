@@ -186,7 +186,7 @@ export class App {
     ];
     const defaultRoute = {
       name: 'default',
-      component: () => { },
+      component: () => {},
     };
     window.onpopstate = () => {
       const currentRouteName = window.location.hash.slice(1);

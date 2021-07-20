@@ -223,8 +223,14 @@ export class Wrapper extends BaseComponent {
       data[0].errorspers = errors(data[0].correct, data[0].wrong);
       updateCard(data[0]);
     });
-    this.Stars.element.appendChild(new Star('rightanswer').element);
-    const audiosucses = new Audio('audio/correct.mp3');
+    this.Stars.element.appendChild(
+      new Star(
+        'https://res.cloudinary.com/dnddbsls8/image/upload/v1626271941/english-for-kids/stars/rightanswer_v3xzva.png',
+      ).element,
+    );
+    const audiosucses = new Audio(
+      'https://res.cloudinary.com/dnddbsls8/video/upload/v1626271917/english-for-kids/audio/correct_uztnos.mp3',
+    );
     audiosucses.play();
     this.CardsField.sounds.splice(this.CurrentSoundindex[0], 1);
     setTimeout(() => {
@@ -251,8 +257,14 @@ export class Wrapper extends BaseComponent {
       data[0].errorspers = errors(data[0].correct, data[0].wrong);
       updateCard(data[0]);
     });
-    this.Stars.element.appendChild(new Star('wronganswer').element);
-    const audioerror = new Audio('audio/error.mp3');
+    this.Stars.element.appendChild(
+      new Star(
+        'https://res.cloudinary.com/dnddbsls8/image/upload/v1626271942/english-for-kids/stars/wronganswer_m3pile.png',
+      ).element,
+    );
+    const audioerror = new Audio(
+      'https://res.cloudinary.com/dnddbsls8/video/upload/v1626271917/english-for-kids/audio/error_uzuqzh.mp3',
+    );
     audioerror.play();
   }
 
@@ -267,11 +279,13 @@ export class Wrapper extends BaseComponent {
     this.CardsField.element.innerHTML = `
       <div class="win">
       <h2 class="endheader">Win</h2>
-      <img class="img" src="../../Endgame/win.svg" alt="">
+      <img class="img" src="https://res.cloudinary.com/dnddbsls8/image/upload/v1626271925/english-for-kids/Endgame/win_jul8ro.svg" alt="">
       </div>
       `;
     this.winLose();
-    const audio = new Audio('audio/success.mp3');
+    const audio = new Audio(
+      'https://res.cloudinary.com/dnddbsls8/video/upload/v1626271924/english-for-kids/audio/success_cw5gta.mp3',
+    );
     audio.play();
     this.goToMain();
     this.removerepeat();
@@ -282,11 +296,13 @@ export class Wrapper extends BaseComponent {
     this.CardsField.element.innerHTML = `
     <div class="lose">
     <h2 class="endheader" >${this.answers} Errors</h2>
-    <img class="img" src="../../Endgame/lose.svg" alt="">
+    <img class="img" src="https://res.cloudinary.com/dnddbsls8/image/upload/v1626271925/english-for-kids/Endgame/lose_cnwrbn.svg" alt="">
     </div>
     `;
     this.winLose();
-    const audio = new Audio('audio/failure.mp3');
+    const audio = new Audio(
+      'https://res.cloudinary.com/dnddbsls8/video/upload/v1626271917/english-for-kids/audio/failure_hnlds1.mp3',
+    );
     audio.play();
     this.goToMain();
     this.removerepeat();
