@@ -1,9 +1,5 @@
 import { BaseComponent } from '../../base-component';
-import {
-  getCategories,
-  getCards,
-  Cards,
-} from '../../../Api';
+import { getCategories, getCards, Cards } from '../../../Api';
 import { CardCategorie } from './admin-categorie/admin-categorie';
 import { CreateCardCategorie } from './create-categorie/create-categorie';
 import { CardWord } from './admin-word/admin-word';
@@ -44,7 +40,7 @@ export class AdminMain extends BaseComponent {
         const wordcards = data.filter((el) => el.category === e.name);
         this.element.insertBefore(
           new CardCategorie(e.name, wordcards.length).element,
-          this.CreateCardCategorie.element,
+          this.CreateCardCategorie.element
         );
       });
     });
@@ -65,7 +61,7 @@ export class AdminMain extends BaseComponent {
     wordcards.forEach((e) => {
       this.element.insertBefore(
         new CardWord(e.word, e.translation, e.image, e.category, e.soundname).element,
-        this.CreateCardWord.element,
+        this.CreateCardWord.element
       );
     });
   }

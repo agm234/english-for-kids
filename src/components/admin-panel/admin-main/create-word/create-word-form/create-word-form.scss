@@ -64,6 +64,10 @@
 }
 .fileinput{
     width: 293px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: bold;
@@ -74,18 +78,24 @@
     
     color: #000000;
 }
-input[type='file'] {
-    color: transparent;
-    border-color: #00BF82;
-    background-color: inherit;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
 .createimg,
 .createsound{
+    display: none;
     width: 143px;
     height: 34px;
     
+}
+.lable{
+    background: none;
+    outline: none;
+    align-items: center;
+    text-align: center;
+    width: 135px;
+    padding: 10px 0;
+    color: #4fbe79;
+    font-size: 22px;
+    font-weight: 400;
+    border: 2px solid #4fbe79;
+    border-radius: 5px;
+    cursor: pointer;
 }

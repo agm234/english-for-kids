@@ -30,8 +30,8 @@ export class Admin extends BaseComponent {
         this.showcards(e);
       }
       if (
-        (e.target as HTMLElement).getAttribute('data-word') === 'categorie'
-        && !((e.target as HTMLElement).parentElement as HTMLElement).classList.contains('active_rout')
+        (e.target as HTMLElement).getAttribute('data-word') === 'categorie' &&
+        !((e.target as HTMLElement).parentElement as HTMLElement).classList.contains('active_rout')
       ) {
         this.showcategories();
       }

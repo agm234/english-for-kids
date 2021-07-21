@@ -180,7 +180,9 @@ export class App {
         name: 'client',
         component: () => {
           this.rootElement.innerHTML = '';
-          this.rootElement.appendChild(new Wrapper().element);
+          this.rootElement.appendChild(this.Wrapper.element);
+          this.Wrapper.PopupWrapper.Popup.PopupForm.reset();
+          window.location.hash = 'main';
         },
       },
     ];

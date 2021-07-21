@@ -3,7 +3,7 @@ import { Popup } from '../popup_login/popup_login';
 import './popup_wrapper.scss';
 
 export class PopupWrapper extends BaseComponent {
-  private readonly Popup: Popup;
+  public readonly Popup: Popup;
 
   constructor() {
     super('div', ['popup_wrapper', 'popup_none']);

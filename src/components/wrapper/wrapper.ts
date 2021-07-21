@@ -225,11 +225,11 @@ export class Wrapper extends BaseComponent {
     });
     this.Stars.element.appendChild(
       new Star(
-        'https://res.cloudinary.com/dnddbsls8/image/upload/v1626271941/english-for-kids/stars/rightanswer_v3xzva.png',
-      ).element,
+        'https://res.cloudinary.com/dnddbsls8/image/upload/v1626271941/english-for-kids/stars/rightanswer_v3xzva.png'
+      ).element
     );
     const audiosucses = new Audio(
-      'https://res.cloudinary.com/dnddbsls8/video/upload/v1626271917/english-for-kids/audio/correct_uztnos.mp3',
+      'https://res.cloudinary.com/dnddbsls8/video/upload/v1626271917/english-for-kids/audio/correct_uztnos.mp3'
     );
     audiosucses.play();
     this.CardsField.sounds.splice(this.CurrentSoundindex[0], 1);
@@ -259,11 +259,11 @@ export class Wrapper extends BaseComponent {
     });
     this.Stars.element.appendChild(
       new Star(
-        'https://res.cloudinary.com/dnddbsls8/image/upload/v1626271942/english-for-kids/stars/wronganswer_m3pile.png',
-      ).element,
+        'https://res.cloudinary.com/dnddbsls8/image/upload/v1626271942/english-for-kids/stars/wronganswer_m3pile.png'
+      ).element
     );
     const audioerror = new Audio(
-      'https://res.cloudinary.com/dnddbsls8/video/upload/v1626271917/english-for-kids/audio/error_uzuqzh.mp3',
+      'https://res.cloudinary.com/dnddbsls8/video/upload/v1626271917/english-for-kids/audio/error_uzuqzh.mp3'
     );
     audioerror.play();
   }
@@ -284,7 +284,7 @@ export class Wrapper extends BaseComponent {
       `;
     this.winLose();
     const audio = new Audio(
-      'https://res.cloudinary.com/dnddbsls8/video/upload/v1626271924/english-for-kids/audio/success_cw5gta.mp3',
+      'https://res.cloudinary.com/dnddbsls8/video/upload/v1626271924/english-for-kids/audio/success_cw5gta.mp3'
     );
     audio.play();
     this.goToMain();
@@ -301,7 +301,7 @@ export class Wrapper extends BaseComponent {
     `;
     this.winLose();
     const audio = new Audio(
-      'https://res.cloudinary.com/dnddbsls8/video/upload/v1626271917/english-for-kids/audio/failure_hnlds1.mp3',
+      'https://res.cloudinary.com/dnddbsls8/video/upload/v1626271917/english-for-kids/audio/failure_hnlds1.mp3'
     );
     audio.play();
     this.goToMain();

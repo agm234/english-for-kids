@@ -15,7 +15,7 @@ export class CardFront extends BaseComponent {
     super('div', ['card_front']);
     this.CardFrontTop = new CardFrontTop(image, mode);
     this.element.appendChild(this.CardFrontTop.element);
-    this.element.setAttribute('word', image.slice(4, -4));
+    this.element.setAttribute('word', name);
     this.CardFrontBottom = new CardFrontBottom(name, none);
     this.element.appendChild(this.CardFrontBottom.element);
     this.audio = new Audio(audio);
