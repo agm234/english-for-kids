@@ -13,7 +13,9 @@ export interface Word {
 }
 
 export class StatsTableRow extends BaseComponent {
-  constructor({ category, word, translation, clicks, correct, wrong }: Word) {
+  constructor({
+    category, word, translation, clicks, correct, wrong,
+  }: Word) {
     super('tr', ['stats-table-row']);
     this.element.innerHTML = `
         <td>${word}</td>

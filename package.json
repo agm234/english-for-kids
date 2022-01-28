@@ -1,5 +1,5 @@
 {
-  "name": "match-match-game",
+  "name": "english-for-kids",
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve --env develop",

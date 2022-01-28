@@ -1,36 +1,38 @@
-.btn_start{
-    width: 300px;
-    height: 60px;
-    border-radius: 20px;
-    background: linear-gradient(40deg,#ffd86f,#fc6262);
-    border-color: linear-gradient(40deg,#ffd86f,#fc6262);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    transition: all 0.8s;
+.btn_start {
+  width: 300px;
+  height: 60px;
+  border-radius: 20px;
+  background: linear-gradient(40deg, #ffd86f, #fc6262);
+  border-color: linear-gradient(40deg, #ffd86f, #fc6262);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all 0.8s;
 }
-.btn_none{
-    display: none;
+.btn_none {
+  display: none;
 }
-.repeat{
-    width: 92px;
-    height: 92px;
-    border-radius: 50%;
-    background-image: url(https://res.cloudinary.com/dnddbsls8/image/upload/v1626271925/english-for-kids/BtnStart/btn_rep_d8tztu.svg),linear-gradient(40deg,#ffd86f,#fc6262) ;
-    background-position: center;
-    background-size: cover;
+.repeat {
+  display: block;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background-image: url(https://res.cloudinary.com/dnddbsls8/image/upload/v1626271925/english-for-kids/BtnStart/btn_rep_d8tztu.svg),
+    linear-gradient(40deg, #ffd86f, #fc6262);
+  background-position: center;
+  background-size: cover;
 }
-.text_start{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 22px;
-    line-height: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.text_start {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.text_hide{
-    display: none;
+.text_hide {
+  display: none;
 }

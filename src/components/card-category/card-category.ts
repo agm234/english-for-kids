@@ -24,7 +24,7 @@ export class CardCat extends BaseComponent {
     audio: string,
     mode: string,
     none: string,
-    none1: string
+    none1: string,
   ) {
     super('div', ['card_category']);
     this.Inactive = new Inactive();

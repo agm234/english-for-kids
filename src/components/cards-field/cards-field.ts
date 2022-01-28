@@ -59,10 +59,10 @@ export class CardsField extends BaseComponent {
         new CardMain(
           e.name,
           e.page as string,
-          e.image ||
-            'https://res.cloudinary.com/dnddbsls8/image/upload/v1626784238/english-for-kids/images/15ef8d1ccbb4514e0a758c61e1623b2f_gj2ggv.jpg',
-          this.check
-        ).element
+          e.image
+            || 'https://res.cloudinary.com/dnddbsls8/image/upload/v1626784238/english-for-kids/images/15ef8d1ccbb4514e0a758c61e1623b2f_gj2ggv.jpg',
+          this.check,
+        ).element,
       );
     });
   }
@@ -91,7 +91,7 @@ export class CardsField extends BaseComponent {
     }
     card.forEach((e) => {
       this.element.appendChild(
-        new CardCat(e.image, e.word, e.translation, e.audioSrc, this.mode, this.none, this.none1).element
+        new CardCat(e.image, e.word, e.translation, e.audioSrc, this.mode, this.none, this.none1).element,
       );
     });
   }

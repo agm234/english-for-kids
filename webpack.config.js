@@ -31,7 +31,8 @@ module.exports = ({ develop }) => ({
         rules: [{
             test: /\.[tj]s$/,
             use: 'ts-loader',
-            exclude: /node_modules/,
+            exclude: [/node_modules/],
+            
         },
         {
             test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
