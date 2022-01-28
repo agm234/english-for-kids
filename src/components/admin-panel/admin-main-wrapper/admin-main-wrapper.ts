@@ -64,7 +64,7 @@ export class AdminMainWrapper extends BaseComponent {
     this.createcategorieForm();
   }
 
-  async createcategorieForm(): Promise<void> {
+   createcategorieForm(): void {
     const form = document.querySelector('.create_categorie_form') as HTMLFormElement;
     form.addEventListener('submit', async (e) => {
       e.preventDefault();

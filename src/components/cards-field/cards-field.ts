@@ -71,6 +71,7 @@ export class CardsField extends BaseComponent {
     const arr = getCards();
     arr.then((data) => {
       const cards = data.filter((el) => el.category.indexOf(cat) !== -1);
+      
       this.AddCardCat(cards);
     });
   }

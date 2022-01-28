@@ -31,6 +31,7 @@ export const getCategories = async (): Promise<Category[]> => {
   const data = await response.json();
   return data;
 };
+
 export const deleteCategory = async (word: string): Promise<void> => {
   await fetch(url(`${CATEGORIES}/${word}`), { method: 'DELETE' });
 };

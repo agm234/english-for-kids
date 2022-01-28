@@ -4,8 +4,9 @@ import './card-main.scss';
 export class CardMain extends BaseComponent {
   constructor(name: string, page: string, image: string, checked: string) {
     super('div', ['card']);
+    let nav=this.newcat(page,name)
     this.element.innerHTML = `
-        <a href="#${page}">
+        <a href="#${nav}">
         <div class="card_top ${checked}"></div>
         <div class="card-img" style="background-image:url('${image}')"></div>
         <div class="card_bottom">
@@ -13,5 +14,12 @@ export class CardMain extends BaseComponent {
         </div>
         </a>
         `;
+  }
+  newcat(page:string,name:string):string{
+    if(page===undefined){
+      return name;
+    }else {
+      return page;
+    }
   }
 }

@@ -26,6 +26,7 @@ export class AdminHeader extends BaseComponent {
     this.element.addEventListener('click', (e) => {
       if ((e.target as HTMLElement).getAttribute('data-word') === 'logout') {
         localStorage.clear();
+        document.body.classList.remove('scroll-hidden');
         window.location.hash = 'client';
       }
     });

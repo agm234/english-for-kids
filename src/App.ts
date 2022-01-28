@@ -2,19 +2,21 @@ import './styles.scss';
 import { Wrapper } from './components/wrapper/wrapper';
 import { Admin } from './components/admin-panel/admin-panel';
 import { TableWrapper } from './components/table-wrapper/table-wrapper';
+import { Category, getCategories } from './Api';
 
 export class App {
   private readonly Wrapper: Wrapper;
-
   private TableWrapper: TableWrapper;
-
+  private name:Category[];
   constructor(private readonly rootElement: HTMLElement) {
     this.Wrapper = new Wrapper();
+    this.name=[];
     this.rootElement.appendChild(this.Wrapper.element);
     this.TableWrapper = new TableWrapper();
   }
 
   async routing(): Promise<void> {
+   
     const routing = [
       {
         name: 'main',
@@ -134,6 +136,19 @@ export class App {
         },
       },
       {
+        name: 'findedCategory',
+        component: () => {
+          this.Wrapper.Stars.element.innerHTML = '';
+          this.Wrapper.Stars.element.style.display = 'flex';
+          this.btnStart();
+          this.nav();
+          this.Wrapper.CardsField.element.innerHTML = '';
+          this.Wrapper.CardsField.element.setAttribute('page', window.location.hash.slice(1));
+          this.Wrapper.CardsField.startCat(window.location.hash.slice(1));
+          this.CurrentCardPage();
+        },
+      },
+      {
         name: 'Stats',
         component: () => {
           this.Wrapper.Stars.element.innerHTML = '';
@@ -188,11 +203,19 @@ export class App {
     ];
     const defaultRoute = {
       name: 'default',
-      component: () => {},
+      component: () => {
+      },
     };
-    window.onpopstate = () => {
+    window.onpopstate = async() => {
+      let arr=[] as Category[];
       const currentRouteName = window.location.hash.slice(1);
-      const currentRoute = routing.find((p) => p.name === currentRouteName);
+      let currentRoute;
+      await getCategories().then(data=> arr=data)
+      if(arr.map(obj=>obj.name).includes(currentRouteName)){
+        currentRoute = routing.find((p)=>p.name==='findedCategory')
+      }else{
+        currentRoute = routing.find((p) => p.name === currentRouteName);
+      }
       (currentRoute || defaultRoute).component();
     };
   }
